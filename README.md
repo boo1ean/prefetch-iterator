@@ -17,10 +17,13 @@ type State = {
 type Payload = any[]
 
 const mongo = new MongoClient('mognodb://localhost')
+await mongo.connect()
+
 const iterator = new PrefetchIterator<State, Payload>({
+    prefetch: 3, // Will try to keep 3 batches of transactions prefetched
     initialState: {
         skip: 0,
-        limit: 100
+        limit: 10000
     },
     fetchNextPayload (state) {
         const payload = await mognodb.db().collection('transactions')

@@ -1,6 +1,6 @@
 {
   "name": "prefetch-iterator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/prefetch-data-iterator.js",
   "types": "dist/prefetch-data-iterator.d.ts",
   "scripts": {
